@@ -9,8 +9,8 @@
 #include "Adafruit_seesaw.h"
 Adafruit_seesaw ss;
 
-const char* ssid = "Vodafone2.4G-BFC3A";
-const char* password = "Leolevine12!";
+const char* ssid = "Vodafone2.4";
+const char* password = "";
 const char* mqtt_server = "192.168.1.180";
 
 WiFiClient espClient;
@@ -129,6 +129,7 @@ void loop() {
     Serial.println("Sent");
   }
 
+  //Automatic watering 
   if (capread < threshold) {
     digitalWrite(relay, HIGH);
     Serial.println("Current flowing");
